@@ -57,7 +57,20 @@ Skriv en multi stage ```Dockerfile``` for Java-applikasjonen, slik at kompilerin
 ### Oppgave 2 - Docker hub
 
 Lag en GitHub actions workflow som bygger et container image og pusher det til din Docker 
-hub konto hver gang noen pusher en tag til repositoryet. Container image i Docker hub skal ha 
-samme tag som i Git.
+hub konto hver gang noen pusher en tag til repositoryet. 
 
-Beskriv hva sensor må gjøre for å få din workflow til å fungere i sin egen GitHub-konto.
+For eksempel skal kommandoene under resultere i et nytt container image med tag 1.0.0 i Docker Hub
+
+```sh
+git tag 1.0.0
+git push --tags
+```
+
+Beskriv hva sensor må gjøre for å få workflowen til å fungere i sin egen GitHub-konto.
+
+### Oppgave 3 
+
+Test din egen workflow, slik at du får minst ett container image i din Docker Hub konto.
+Hvilken docker kommando kan sensor bruke for å laste ned og starte ditt container image fra docker hub?
+
+Fullfør ```docker ..```
