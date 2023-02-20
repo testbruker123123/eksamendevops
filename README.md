@@ -4,9 +4,17 @@
 
 Du har fått en idé du selv mener er veldig god - et API som lager tilfeldige kakeoppskrifter basert på en rekke ingredienser. Etter en liten helg med koding har du det som ligger i dette repositoryet. Fordi du er helt sikker på at dette kommer til å slå an på et globalt nivå, tenker du det er best å starte med god DevOps praksis fra starten av.
 
-# Krav til leveransen 
+## Krav til leveransen
 
-Lag et nytt repository og kopier filene fra dette repositoryet. Du skal levere en lenke til ditt GitHub repository. Lenken skal være i en tekstfil i leveransen.
+* Eksamensoppgaven er gitt på GitHub repository ; https://github.com/pgr301-2022/konte-2022
+* Du skal ikke lage en fork av dette repositoryet, men kopiere innholdet til et nytt. Årsaken er at sensor vil lage en fork av ditt repo, og arbeidsflyten blir lettere hvis ditt repo ikke er en fork.
+* Du kan jobbe i et public-, eller privat repo, og deretter gjøre det public noen timer etter innleveringsfrist hvis du er bekymret for plagiat fra medstudenter.
+
+Når sensor evaluerer oppgaven vil han/hun se på
+
+* Ditt repository og "Actions" fanen i GutHub for å bekrefte at Workflows faktisk virker
+* Vurdere drøftelsesoppgavene. Du må lage en  "Readme" for besvarelsen i ditt repo.
+* Sensor vil Lage en fork av ditt repo og tester ut pipelines med egen Docker hub/github bruker.
 
 ## Del 1 - Prinsipper
 
