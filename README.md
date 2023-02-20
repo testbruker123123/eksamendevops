@@ -16,11 +16,21 @@ Når sensor evaluerer oppgaven vil han/hun se på
 * Vurdere drøftelsesoppgavene. Du må lage en  "Readme" for besvarelsen i ditt repo.
 * Sensor vil Lage en fork av ditt repo og tester ut pipelines med egen Docker hub/github bruker.
 
+# Om applikasjonen 
+
+Du kan start applikasjonen lokalt ved å kjøre
+
+```shell
+mvn spring-boot:run
+```
+
+Og deretter åpne en nettleser med for eksempel - http://localhost:8080/cake-ingredients?numberOfIngredients=23
+
 ## Del 1 - Prinsipper
 
 Forklar hvordan et større utviklingsteam kan samarbeide om videreutvikling av denne applikasjonen med tanke på:
 
-* Hvordan man bruker av branches
+* Hvordan man bruker branches
 * Sørge for at main branch alltid kompilerer og tester som er i orden
 * Hindre noen i teamet å committe rett på main branch uten at noen andre også har sett på koden
 
