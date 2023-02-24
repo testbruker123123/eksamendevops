@@ -16,6 +16,13 @@ Når sensor evaluerer oppgaven vil han/hun se på
 * Vurdere drøftelsesoppgavene. Du må lage en  "Readme" for besvarelsen i ditt repo.
 * Sensor vil Lage en fork av ditt repo og tester ut pipelines med egen Docker hub/github bruker.
 
+## Evaluering
+
+* Del 1 Prinsipper - 30 poeng
+* Del 2 GitHub actions - 30 poeng
+* Del 3 Docker - 40 poeng
+
+* 
 # Om applikasjonen 
 
 Du kan start applikasjonen lokalt ved å kjøre
@@ -28,25 +35,32 @@ Og deretter åpne en nettleser med for eksempel - http://localhost:8080/cake-ing
 
 ## Del 1 - Prinsipper
 
-Forklar hvordan et større utviklingsteam kan samarbeide om videreutvikling av denne applikasjonen med tanke på:
+Forklar hvordan et større utviklingsteam kan samarbeide om videreutvikling av denne applikasjonen 
+med tanke på:
 
-* Hvordan man bruker branches
-* Sørge for at main branch alltid kompilerer og tester som er i orden
-* Hindre noen i teamet å committe rett på main branch uten at noen andre også har sett på koden
+* Kontinuerlig integrasjon - hva mener vi med dette, og hvorfor er dette viktig?
+* Kontinuerlige leveranser - hva mener vi med dette og hvorfor er det viktig?
 
+Når applikasjonen er i drift, ønsker du å ha god innsikt i både forretningsmessige og tekniske aspekter ved 
+applikasjonen. Eksempler; antall brukere, antall oppskrifter generert - men også respontider, feilrater, CPU og minnebrukt osv   
+
+* Forklar hvorfor det er enklere å få denne innsikten når man adopterer DevOps, i forhold til Vannfall og et skille mellom drift- og utviklingsteam.
 
 ## Del 2 - GitHub actions 
 
-### Oppgave 2 - GitHub actions workflow
+### Oppgave 1 - GitHub actions workflow
 
 Lag en GitHub actions workflow som gjør følgende for hver pull request som lages i ditt repository:
 
 * Kompilerer koden
 * Kjører enhetstester
 
-### Oppgave 3
+### Oppgave 2
 
-Beskriv med ord eller skjermbilder hvordan man kan konfigurere GitHub på en slik måte at det ikke er mulig å merge en Pull Request inn i main branch, uten at koden kompilerer og enhetstester er kjørt uten feil.
+Beskriv med ord eller skjermbilder hvordan man kan konfigurere GitHub på en slik måte at 
+
+* Det ikke er mulig å merge en Pull Request inn i main branch, uten at koden kompilerer og enhetstester er kjørt uten feil.
+* Minst en annen person i teamet har godkjent endringen 
 
 ## Del 3 Docker 
 
@@ -59,7 +73,7 @@ Skriv en multi stage ```Dockerfile``` for Java-applikasjonen, slik at kompilerin
 Lag en GitHub actions workflow som bygger et container image og pusher det til din Docker 
 hub konto hver gang noen pusher en tag til repositoryet. 
 
-For eksempel skal kommandoene under resultere i et nytt container image med tag 1.0.0 i Docker Hub
+For eksempel skal kommandoene under, når det gjøres mot ditt GitHub Repository resultere i et nytt container image med tag 1.0.0 i Docker Hub
 
 ```sh
 git tag 1.0.0
