@@ -1,0 +1,16 @@
+name: build and test
+
+on:
+  pull_request:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Build
+        run: mvn spring-boot:run
+
+      - name: Test
+        run: mvn test
