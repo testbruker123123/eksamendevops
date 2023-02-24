@@ -22,7 +22,6 @@ Når sensor evaluerer oppgaven vil han/hun se på
 * Del 2 GitHub actions - 30 poeng
 * Del 3 Docker - 40 poeng
 
-* 
 # Om applikasjonen 
 
 Du kan start applikasjonen lokalt ved å kjøre
@@ -64,6 +63,8 @@ Beskriv med ord eller skjermbilder hvordan man kan konfigurere GitHub på en sli
 * Minst en annen person i teamet har godkjent endringen 
 
 ## Del 3 Docker 
+
+I denne oppgaven trenger du en konto på Docker Hub https://hub.docker.com/
 
 ### Oppgave 1 
 
