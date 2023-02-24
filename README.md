@@ -86,6 +86,6 @@ Beskriv hva sensor må gjøre for å få workflowen til å fungere i sin egen Gi
 ### Oppgave 3 
 
 Test din egen workflow, slik at du får minst ett container image i din Docker Hub konto.
-Hvilken docker kommando kan sensor bruke for å laste ned og starte ditt container image fra docker hub?
+* Hvilken docker kommando kan sensor bruke for å laste ned og starte ditt container image fra docker hub? Applikasjonen skal være tilgjengelig på http://localhost:9999 etter oppstart 
 
 Fullfør ```docker ..```
