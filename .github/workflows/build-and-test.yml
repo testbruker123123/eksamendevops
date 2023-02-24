@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Build
-        run: mvn clean install
+        run: mvn spring-boot:run
 
       - name: Test
         run: mvn test
