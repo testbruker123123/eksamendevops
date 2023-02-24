@@ -46,7 +46,7 @@ applikasjonen. Eksempler; antall brukere, antall oppskrifter generert - men ogs�
 
 * Forklar hvorfor det er enklere å få denne innsikten når man adopterer DevOps, i forhold til Vannfall og et skille mellom drift- og utviklingsteam.
 * Forklar hvordand du kan implementere en løsning basert på tjenester i Amazon Webservices for å få denne oversikten. Hva må du konfigurere i AWS, og hva må du gjøre i applikasjonen?
-* 
+
 ## Del 2 - GitHub actions 
 
 ### Oppgave 1 - GitHub actions workflow
