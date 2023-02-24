@@ -8,3 +8,4 @@ FROM openjdk:8-jre-alpine
 WORKDIR /app
 COPY --from=build /app/target/myapp.jar .
 CMD ["java", "-jar", "myapp.jar"]
+//wow
