@@ -45,7 +45,8 @@ Når applikasjonen er i drift, ønsker du å ha god innsikt i både forretningsm
 applikasjonen. Eksempler; antall brukere, antall oppskrifter generert - men også respontider, feilrater, CPU og minnebrukt osv   
 
 * Forklar hvorfor det er enklere å få denne innsikten når man adopterer DevOps, i forhold til Vannfall og et skille mellom drift- og utviklingsteam.
-
+* Forklar hvordand du kan implementere en løsning basert på tjenester i Amazon Webservices for å få denne oversikten. Hva må du konfigurere i AWS, og hva må du gjøre i applikasjonen?
+* 
 ## Del 2 - GitHub actions 
 
 ### Oppgave 1 - GitHub actions workflow
