@@ -6,7 +6,7 @@ on:
       - '*'
 
 env:
-  IMAGE_NAME: bakemyday
+  IMAGE_NAME: vegardg/bakemyday
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
