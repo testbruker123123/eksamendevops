@@ -1,0 +1,25 @@
+on:
+  push:
+    tags:
+      -'*'
+
+env:
+  IMAGE_NAME: vegardg/bakemyday
+
+jobs:
+  build-and-push:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Login to Docker
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v2
+        with:
+          context:
+            push: true
+            tags: ${{ env.IMAGE_NAME }}:${{ github.ref }}
