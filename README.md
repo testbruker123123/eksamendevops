@@ -75,7 +75,13 @@ Trykk så på 'Create' helt nederst.
 ---
 
 Del 3 oppgave 2:
-Gå inn på 'Actions' på forken aktiver workflows
+1. Gå til Docker hub > Account settings > Security og trykk på 'New access token', generer og kopier den
+2. Gå til settings på fork repositaryet > Settings > Secrets and Variables > Actions og trykk på 'New repository secret'
+3. Lag en secret som heter DOCKERHUB_USERNAME og skriv inn Docker Hub brukernavnet ditt som verdi. Lag en til secret som heter DOCKERHUB_TOKEN 
+   og lim inn Access token fra steg en som verdi
+4. Åpne build-and-push.yml filen under .github/workflows og erstatt 'vegardg' med ditt eget Docker Hub brukernavn under env: IMAGE_NAME
+5. Åpne en terminal og CD til lokasjonen som prosjektet er lagret.  
+   Workflowen skal da starte etter du først skriver 'git tag 1.0.0' f.eks etterfulgt av git push --tags
 
 Oppgave 3:
 
