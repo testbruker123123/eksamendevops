@@ -1,7 +1,9 @@
+name: Build and push container image
+
 on:
   push:
     tags:
-      -'*'
+      - '*'
 
 env:
   IMAGE_NAME: vegardg/bakemyday
