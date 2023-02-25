@@ -1,92 +1,94 @@
-# Konteeksamen  - PGR301
 
-# Scenario
+GitHub repository: https://github.com/VegardG/devopseksamen
 
-Du har fått en idé du selv mener er veldig god - et API som lager tilfeldige kakeoppskrifter basert på en rekke ingredienser. Etter en liten helg med koding har du det som ligger i dette repositoryet. Fordi du er helt sikker på at dette kommer til å slå an på et globalt nivå, tenker du det er best å starte med god DevOps praksis fra starten av.
+Del 1:
 
-## Krav til leveransen
+Sammarbeid blant et større utvkiklingsteam er veldig viktig for å sikre kvalitet og suksess i videre utvikling av applikasjonen.
+To svært viktige praksiser for å gjøre dette lettere er kontinuerlig integrasjon (CI) og kontinuerlig leveranse (CD).
 
-* Eksamensoppgaven er gitt på GitHub repository ; https://github.com/pgr301-2022/konte-2022
-* Du skal ikke lage en fork av dette repositoryet, men kopiere innholdet til et nytt. Årsaken er at sensor vil lage en fork av ditt repo, og arbeidsflyten blir lettere hvis ditt repo ikke er en fork.
-* Du kan jobbe i et public-, eller privat repo, og deretter gjøre det public noen timer etter innleveringsfrist hvis du er bekymret for plagiat fra medstudenter.
+Kontinuerlig integrasjon er å ofte integrere kodeendringer gjort av forskjellige utviklere til et delt repository.
+Dette oppnås ved bruk av en autimatisert byggprosess som kompilerer endringer og kjører tester for å finne eventuelle feil med endringene.
+Dette sikrer at kodeendringer integreres i applikasjonen så fort som mulig og konflikter kan bli løst tidlig, noe som reduserer sjansene for
+integrasjonsproblemer senere. Dette kan hindre feil eller bugs å komme inn i koden som kan føre til mye bortkastet tid på debugging og lignende.
 
-Når sensor evaluerer oppgaven vil han/hun se på
+Kontinuerlig leveranse er er å automatisere utgivelsen av software endringer til produksjon. Dette sørger for at applikasjonen alltid er i en
+utgivbar tilstand, med automatiserte test og utrullingsprosesser. Koden blir da integrert i applikasjonen så fort som mulig så lenge den består 
+testene. Dette gjør at man kan legge til nye funksjoner eller fikse gamle med mye mindre risiko. 
 
-* Ditt repository og "Actions" fanen i GutHub for å bekrefte at Workflows faktisk virker
-* Vurdere drøftelsesoppgavene. Du må lage en  "Readme" for besvarelsen i ditt repo.
-* Sensor vil Lage en fork av ditt repo og tester ut pipelines med egen Docker hub/github bruker.
+CI og CD har da fordeler som at hele teamet har kodeendringer tilgjengelig som gjør det lettere å sammarbeide.
+Med kjapp integrasjon og automatisk testing av kode blir det mye lettere å rette på bugs og feil tidlig.
+Det kreves mer koordinering mellom utviklere som fører til bedre kommunikasjon mellom teamet.
+Når man kan fikse bugs og legge til nye funskjoner raskere og enklere bruker man mindre tid på utvikling og applikasjonen bevege seg framover raskere.
 
-## Evaluering
+Alt dette sammen gjør at CI og CD essensielt for sammarbeid mellom store utviklingsteam.
 
-* Del 1 Prinsipper - 30 poeng
-* Del 2 GitHub actions - 30 poeng
-* Del 3 Docker - 40 poeng
+---
 
-# Om applikasjonen 
+Det blir lettere å få innsikt i både forretningsmessige og tekniske aspekter sammenlignet med Waterfall-metoden hvor utviklere bygger applikasjonen
+og driftsteamet er ansvarlige for å utgi og vedlikeholde. Denne seperasjonen skaper en avstand mellom teamene som kan gjøre det vanskelig å få innsikt.
+Hvis det oppstår problemer kan f. eks utviklere ikke ha den nødvendige innsikten inn i miljøet for å løse problemet.
 
-Du kan start applikasjonen lokalt ved å kjøre
+DevOps legger vekt på sammarbeid og kommunikasjon mellom drift og utviklingsteamet hvor de jobber sammen gjennom hele utviklingsyklusen.
+Dette gjør at gjør at begge teamene har mye større og bedre innsikt i prosjektet.
 
-```shell
-mvn spring-boot:run
-```
+Automatisering i DevOps i testing, utgivelse og overvåking gjør at teamene får mer innsikt i de tekniske aspektene som responstider, feilrate,
+CPU og minnebruk osv. Automatiseringen gjør at teamene kan samle inn data kontinuerlig som kan brukes til å forbedre ytelse osv.
 
-Og deretter åpne en nettleser med for eksempel - http://localhost:8080/cake-ingredients?numberOfIngredients=23
+Med bruk av kontinuerlig leveranse blir det lett å få innsikt i applikasjonens brukere og hvordan de bruker den. Denne informasjonen kan da
+brukes til hvordan man skal gå videre med applikasjonen fra en forretnings synsvinkel.
 
-## Del 1 - Prinsipper
+---
 
-Forklar hvordan et større utviklingsteam kan samarbeide om videreutvikling av denne applikasjonen 
-med tanke på:
+Her er hva man kan gjøre i AWS:
 
-* Kontinuerlig integrasjon - hva mener vi med dette, og hvorfor er dette viktig?
-* Kontinuerlige leveranser - hva mener vi med dette og hvorfor er det viktig?
+Bruke Amazon CloudWatch som er en obervasjonstjeneste som kan brukes til å samle inn og spore metrics, loggfiler og å sette alarmer. Man kan bruke
+det til å overvåke både tekniske aspekter som response-tider, feilrater, CPU og minnebruk, og de forretningsmessige aspektene som antall brukere og 
+genererte oppskrifter.
 
-Når applikasjonen er i drift, ønsker du å ha god innsikt i både forretningsmessige og tekniske aspekter ved 
-applikasjonen. Eksempler; antall brukere, antall oppskrifter generert - men også respontider, feilrater, CPU og minnebrukt osv   
+Amazon Simple Notification Service (SNS) er en meldingstjeneste som sender varsler fra applikasjonen til CloudWatch f.eks. Dette kan brukes til å sende
+varsler om høy CPU bruk eller økning i feilrate eller antall brukere og oppskrifter. For å bruke dette må man opprette et emne og abonnere på det ved
+å bruke de riktige protokollene som e-post, SMS eller HTTP.
 
-* Forklar hvorfor det er enklere å få denne innsikten når man adopterer DevOps, i forhold til Vannfall og et skille mellom drift- og utviklingsteam.
-* Forklar hvordand du kan implementere en løsning basert på tjenester i Amazon Webservices for å få denne oversikten. Hva må du konfigurere i AWS, og hva må du gjøre i applikasjonen?
+For å få innsikt i applikasjonen må man gjøre at den sender ut metrikker og logger til CloudWatch og SNS ved å bruke enten CloudWatch agenten eller
+AWS SDK.
 
-## Del 2 - GitHub actions 
+Det finnes også noe som heter Amazon QuickSight som kan brukes til å visualisere og analysere data fra f.eks CloudWatch og SNS. Du kan lage et dashboard
+som viser tilstanden til applikasjonen og aspektene som er nevnt. 
 
-### Oppgave 1 - GitHub actions workflow
+---
 
-Lag en GitHub actions workflow som gjør følgende for hver pull request som lages i ditt repository:
+Del 2 oppgave 2:
 
-* Kompilerer koden
-* Kjører enhetstester
+For at det ikke skal være mulig å merge enn Pull Request i main branch uten at koden kompilerer, enhetstester er kjørt uten feil og minst en annen person
+i teamet har godkjent endringen gjør man slik:
 
-### Oppgave 2
+Inne på repositoryet på github trykk på 'Settings' tabben.
+Trykk deretter på 'Branches' i menyen til venstre.
+Trykk på 'Add branch protection rule' under Branch protection rules.
+Navngi 'Branch name pattern' som din main branch.
+Trykk på disse 2 boksene: 'Require status cheks to pass before merging' så 'Require branches to be up to date before merging'.
+Legg til navnet til enhetstestene som kjører automatisk.
+Trykk på boksen 'Require a pull request before merging' deretter 'Require approvals' og sett'Required number of approvals before merging' til 1.
+Tykk på boksen 'Dismiss stale pull request approvals when new commits are pushed'.
+Trykk så på 'Create' helt nederst.
 
-Beskriv med ord eller skjermbilder hvordan man kan konfigurere GitHub på en slik måte at 
+---
 
-* Det ikke er mulig å merge en Pull Request inn i main branch, uten at koden kompilerer og enhetstester er kjørt uten feil.
-* Minst en annen person i teamet har godkjent endringen 
+Del 3 oppgave 2:
+Gå inn på 'Actions' på forken aktiver workflows
 
-## Del 3 Docker 
+Oppgave 3:
 
-I denne oppgaven trenger du en konto på Docker Hub https://hub.docker.com/
+1. docker pull vegardg/bakemyday
+2. docker run -p 9999:8080 vegardg/bakemyday
 
-### Oppgave 1 
 
-Skriv en multi stage ```Dockerfile``` for Java-applikasjonen, slik at kompileringen og byggingen kjører i selvstendige Docker containere.
 
-### Oppgave 2 - Docker hub
 
-Lag en GitHub actions workflow som bygger et container image og pusher det til din Docker 
-hub konto hver gang noen pusher en tag til repositoryet. 
 
-For eksempel skal kommandoene under, når det gjøres mot ditt GitHub Repository resultere i et nytt container image med tag 1.0.0 i Docker Hub
 
-```sh
-git tag 1.0.0
-git push --tags
-```
 
-Beskriv hva sensor må gjøre for å få workflowen til å fungere i sin egen GitHub-konto.
 
-### Oppgave 3 
 
-Test din egen workflow, slik at du får minst ett container image i din Docker Hub konto.
-* Hvilken docker kommando kan sensor bruke for å laste ned og starte ditt container image fra docker hub? Applikasjonen skal være tilgjengelig på http://localhost:9999 etter oppstart 
 
-Fullfør ```docker ..```
+
