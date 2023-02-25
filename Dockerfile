@@ -1,10 +1,17 @@
 
-FROM openjdk:8-jdk AS build
+FROM maven:3.9.0 AS build
+#ENV JAVA_HOME /usr/local/openjdk-17
+COPY . /app
 WORKDIR /app
-COPY . .
-RUN ./mvnw clean package
+#COPY pom.xml .
+RUN mvn dependency:go-offline
 
-FROM openjdk:8-jre-alpine
+RUN mvn package
+
+FROM openjdk:17-jdk-slim AS java-runtime
 WORKDIR /app
-COPY --from=build /app/target/myapp.jar .
-CMD ["java", "-jar", "myapp.jar"]
+#ARG JAR_FILE=target/bakemyday.jar
+COPY --from=build /app/target/*.jar /app/app.jar
+EXPOSE 8080
+ENTRYPOINT ["java","-jar","app.jar"]
+
