@@ -28,4 +28,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ env.IMAGE_NAME }}:${{ github.ref.replace('refs/tags/', '') }}
+          tags: ${{ env.IMAGE_NAME }}:${{ github.ref.split('/')[2] }}
