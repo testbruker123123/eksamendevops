@@ -27,4 +27,4 @@ jobs:
           context: .
           push: true
           #tags: ${{ env.IMAGE_NAME }}:${{ github.ref }}
-          tags: vegard/bakemyday
+          tags: vegardg/bakemyday
