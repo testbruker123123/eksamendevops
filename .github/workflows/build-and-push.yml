@@ -26,4 +26,4 @@ jobs:
           context: .
           push: true
           #tags: ${{ env.IMAGE_NAME }}:${{ github.ref }}
-          tags: bakemyday:${{ github.ref }}
+          tags: ${{ github.ref }}
