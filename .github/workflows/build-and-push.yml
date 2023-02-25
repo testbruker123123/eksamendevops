@@ -5,8 +5,10 @@ on:
     tags:
       - '*'
 
-env:
-  IMAGE_NAME: vegardg/bakemyday
+  env:
+    IMAGE_NAME: vegardg/bakemyday
+    GITHUB_REF: ${{ github.ref }}
+    GITHUB_REF_REPLACE: ${{ env.GITHUB_REF/refs/tags/ }}
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
@@ -29,7 +31,4 @@ jobs:
           context: .
           push: true
           tags: ${{ env.IMAGE_NAME }}:${{ github.ref_replace }}
-  env:
-    IMAGE_NAME: your-dockerhub-username/image-name
-    GITHUB_REF: ${{ github.ref }}
-    GITHUB_REF_REPLACE: ${{ env.GITHUB_REF/refs/tags/ }}
+
