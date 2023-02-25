@@ -5,10 +5,10 @@ on:
     tags:
       - '*'
 
-  env:
-    IMAGE_NAME: vegardg/bakemyday
-    GITHUB_REF: ${{ github.ref }}
-    GITHUB_REF_REPLACE: ${{ env.GITHUB_REF/refs/tags/ }}
+env:
+  IMAGE_NAME: vegardg/bakemyday
+  GITHUB_REF: ${{ github.ref }}
+  GITHUB_REF_REPLACE: ${{ env.GITHUB_REF/refs/tags/ }}
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
